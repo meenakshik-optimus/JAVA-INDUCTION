@@ -8,8 +8,8 @@ public class Ggsipu extends University implements Detailing {
 	 * variable declarations
 	 */
 	private String location;
-	private int college_id;
-	private String col_name;
+	private int collegeId;
+	private String colName;
 
 	/**
 	 * getLocation() implementation which gives the location of the university
@@ -36,17 +36,17 @@ public class Ggsipu extends University implements Detailing {
 	 * @param num
 	 * @param s
 	 */
-	public void setName(int college_id, String col_name) {
-		this.college_id = college_id;
-		this.col_name = col_name;
+	public void setName(int collegeId, String colName) {
+		this.collegeId = collegeId;
+		this.colName = colName;
 	}
 
 	/**
 	 * getColDetail() method gives detail of college under university
 	 */
 	public void getColDetail() {
-		System.out.println("college name is " + col_name
-				+ " and college ID is " + college_id);
+		System.out.println("college name is " + colName
+				+ " and college ID is " + collegeId);
 	}
 
 	/**

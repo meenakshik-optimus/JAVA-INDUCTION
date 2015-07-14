@@ -7,40 +7,40 @@ public class TestClass {
 		/**
 		 * An object of Ggsipu class is created
 		 */
-		University u1 = new Ggsipu();
+		University ggsipu = new Ggsipu();
 
 		/**
 		 * calling setName() method inherited from University
 		 */
-		u1.setName("Ipu");
+		ggsipu.setName("Ipu");
 
 		/**
 		 * conductExam() is called for Ggsipu class object
 		 */
-		u1.conductExam();
+		ggsipu.conductExam();
 
 		/**
 		 * setName() method overloaded in Ggsipu
 		 */
-		Ggsipu u;
-		u = (Ggsipu) u1;
-		u.setName(1, "GEC");
+		Ggsipu university;
+		university = (Ggsipu)ggsipu;
+		university.setName(1, "GEC");
 
 		/**
 		 * calling getColDetail() method of class Ggsipu
 		 */
-		u.getColDetail();
+		university.getColDetail();
 
 		/**
-		 * u1.setLocation("Dwarka"); This will give error as setLocation is not
+		 * university.setLocation("Dwarka"); This will give error as setLocation is not
 		 * defined for University class. So use reference variable of type
 		 * Detailing
 		 */
-		Detailing d1 = (Ggsipu) u1;
-		d1.setLocation("Dwarka");
+		Detailing detailOne = (Ggsipu)ggsipu;
+		detailOne.setLocation("Dwarka");
 
 		try {
-			System.out.println(" Location is " + d1.getLocation());
+			System.out.println(" Location is " + detailOne.getLocation());
 		}
 
 		catch (Exception e) {
@@ -48,42 +48,42 @@ public class TestClass {
 		}
 
 		/**
-		 * System.out.println(" Location is " +d1.location); will not run as
+		 * System.out.println(" Location is " +detailOne.location); will not run as
 		 * variable location is private
 		 */
 
-		University u2 = new Amity();
-		u2.setName("AMITY");
+		University amity = new Amity();
+		amity.setName("AMITY");
 
 		/**
 		 * calling overridden getName() method
 		 */
-		u2.getName();
+		amity.getName();
 
 		/**
 		 * conductExam() is called for Amity class object
 		 */
-		u2.conductExam();
+		amity.conductExam();
 
-		Detailing d2 = (Amity) u2;
+		Detailing detailTwo = (Amity)amity;
 
 		/**
 		 * getLocation() will throw exception as location is not set yet
 		 */
-		System.out.println(" Location is " + d2.getLocation());
+		System.out.println(" Location is " + detailTwo.getLocation());
 
 		/**
 		 * set the location of Amity class object
 		 */
-		d2.setLocation("Noida");
+		detailTwo.setLocation("Noida");
 
 		/**
 		 * calling getLocation() method after setting the location
 		 */
-		System.out.println(" Location is " + d2.getLocation());
+		System.out.println(" Location is " + detailTwo.getLocation());
 
 		/**
-		 * System.out.println(" Location is " +d2.location); variable location
+		 * System.out.println(" Location is " +detailTwo.location); variable location
 		 * is private
 		 */
 
