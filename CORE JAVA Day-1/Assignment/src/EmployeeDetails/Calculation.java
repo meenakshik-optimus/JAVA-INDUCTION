@@ -1,11 +1,11 @@
 package EmployeeDetails;
 
-//interface declaration
-
+/**
+ * interface declaration Calculation is an interface having calculate() method
+ */
 public interface Calculation {
-	
-	// calculate method declaration
-	
+	/**
+	 * calculate method declaration
+	 */
 	public int calculate();
-
 }
