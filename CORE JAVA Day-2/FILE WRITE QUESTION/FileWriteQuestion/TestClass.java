@@ -12,7 +12,7 @@ public class TestClass {
 	/**
 	 * variable definition
 	 */
-	static FileWriter filewriter;
+	static FileWriter fileWriter;
 	
 	/**
 	 * main() method call
@@ -30,7 +30,7 @@ public class TestClass {
 		 */
 		try{
 		File file=new File("output.txt");;
-		 filewriter=new FileWriter(file);
+		 fileWriter=new FileWriter(file);
 		}
 		
 		catch(IOException exception){}
@@ -40,6 +40,12 @@ public class TestClass {
 			Thread thread=new Thread(new MyThreads("Thread "+count));
 			thread.start();
 		}
+		
+		try{
+			fileWriter.close();
+		}
+		
+		catch(IOException exception){}
 	}
 
 }

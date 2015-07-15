@@ -16,8 +16,8 @@ public class StringHandle{
 	 */
 	public static void main(String s[]) throws IOException {
 		
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		String string=br.readLine();
+		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+		String string=bufferedReader.readLine();
 		
 		/**
 		 * split method to split the string given
@@ -30,6 +30,11 @@ public class StringHandle{
 		for(int count=0;count<tokens.length;count++){
 			System.out.println(tokens[count]);
 		}
-	}
 
-}
+		/**
+		*closing the BufferedReader connection
+		*/
+		bufferedReader.close():
+	  }
+
+         }

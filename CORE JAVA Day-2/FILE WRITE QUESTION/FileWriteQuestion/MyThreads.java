@@ -10,7 +10,7 @@ public class MyThreads implements Runnable {
 	/**
 	 * variables declaration
 	 */
-	FileWriter filewriter = TestClass.filewriter;
+	FileWriter fileWriter = TestClass.fileWriter;
 	String name;
 
 	/**
@@ -31,9 +31,9 @@ public class MyThreads implements Runnable {
 		 * try and catch block as the write() method throws IOException
 		 */
 		try {
-			filewriter.write("Run by " + Thread.currentThread().getName()
+			fileWriter.write("Run by " + Thread.currentThread().getName()
 					+ " \n");
-			filewriter.flush();
+			fileWriter.flush();
 		}
 
 		catch (IOException exception) {}

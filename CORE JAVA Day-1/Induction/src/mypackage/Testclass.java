@@ -36,11 +36,11 @@ public class TestClass {
 		 * defined for University class. So use reference variable of type
 		 * Detailing
 		 */
-		Detailing detailOne = (Ggsipu)ggsipu;
-		detailOne.setLocation("Dwarka");
+		Detailing detailGgsipu = (Ggsipu)ggsipu;
+		detailGgsipu.setLocation("Dwarka");
 
 		try {
-			System.out.println(" Location is " + detailOne.getLocation());
+			System.out.println(" Location is " + detailGgsipu.getLocation());
 		}
 
 		catch (Exception e) {
@@ -48,7 +48,7 @@ public class TestClass {
 		}
 
 		/**
-		 * System.out.println(" Location is " +detailOne.location); will not run as
+		 * System.out.println(" Location is " +detailGgsipu.location); will not run as
 		 * variable location is private
 		 */
 
@@ -65,25 +65,25 @@ public class TestClass {
 		 */
 		amity.conductExam();
 
-		Detailing detailTwo = (Amity)amity;
+		Detailing detailAmity = (Amity)amity;
 
 		/**
 		 * getLocation() will throw exception as location is not set yet
 		 */
-		System.out.println(" Location is " + detailTwo.getLocation());
+		System.out.println(" Location is " + detailAmity.getLocation());
 
 		/**
 		 * set the location of Amity class object
 		 */
-		detailTwo.setLocation("Noida");
+		detailAmity.setLocation("Noida");
 
 		/**
 		 * calling getLocation() method after setting the location
 		 */
-		System.out.println(" Location is " + detailTwo.getLocation());
+		System.out.println(" Location is " + detailAmity.getLocation());
 
 		/**
-		 * System.out.println(" Location is " +detailTwo.location); variable location
+		 * System.out.println(" Location is " +detailAmity.location); variable location
 		 * is private
 		 */
 
