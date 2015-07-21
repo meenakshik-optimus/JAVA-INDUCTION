@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
 
-
 /**
  * Servlet implementation class LoginServlet
  */
@@ -17,24 +16,20 @@ import java.io.PrintWriter;
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    /**
-     * Default constructor. 
-     */
-    public LoginServlet() {
-        // TODO Auto-generated constructor stub
-    }
-
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		String name = request.getParameter("Name");
 		String pass = request.getParameter("Password");
-		if ((name.equals("mixi") && pass.equals("mixi"))||(name.equals("meenu") && pass.equals("meenu"))) {
+
+		if ((name.equals("mixi") && pass.equals("mixi"))
+				|| (name.equals("meenu") && pass.equals("meenu"))) {
 			RequestDispatcher requestDispathcher = request
 					.getRequestDispatcher("HitCount");
 			requestDispathcher.forward(request, response);
