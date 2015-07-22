@@ -28,7 +28,7 @@ public class Application {
 		transaction.commit();
 		session.close();
 
-		System.out.println("successfully saved");
+		System.out.println("Data successfully saved");
 
 	}
 }
