@@ -1,14 +1,17 @@
 package edu.javalearn.domain.webhibernate;
 
 import java.io.IOException;
-
+import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import edu.javalearn.domain.hibernatedataaccess.UserDataAccess;
+import edu.javalearn.domain.hibernateBean.User;
 
 /**
  * Servlet implementation class Register
@@ -31,8 +34,11 @@ public class Register extends HttpServlet {
 		try {
 			UserDataAccess userDataAccess = new UserDataAccess();
 			userDataAccess.addUserDetails(UserName, Password);
-			userDataAccess.retrieve();
-			response.sendRedirect("successRegistration");
+			List<User> userList = userDataAccess.getUserList();
+			RequestDispatcher requestDispatcher = request
+					.getRequestDispatcher("/UserDetails.jsp");
+			request.setAttribute("UserDetails", userList);
+			requestDispatcher.forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

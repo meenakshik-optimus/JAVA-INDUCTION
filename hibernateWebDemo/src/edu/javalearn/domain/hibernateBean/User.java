@@ -8,7 +8,7 @@ package edu.javalearn.domain.hibernateBean;
 public class User {
 	private int id;
 	private String userName;
-	private String password1;
+	private String password;
 
 	/**
 	 * @return
@@ -41,15 +41,15 @@ public class User {
 	/**
 	 * @return
 	 */
-	public String getPassword1() {
-		return password1;
+	public String getPassword() {
+		return password;
 	}
 
 	/**
 	 * @param password1
 	 */
-	public void setPassword1(String password1) {
-		this.password1 = password1;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }

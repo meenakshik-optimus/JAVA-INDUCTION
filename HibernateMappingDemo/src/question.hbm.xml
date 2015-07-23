@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="edu.javalearn.domain.hibernateMappingDemo.Question"
+		table="Question_Table">
+		<id name="id">
+			<generator class="increment"></generator>
+		</id>
+		<property name="questionName"></property>
+
+		<bag name="answers" cascade="all">
+			<key column="questionId"></key>
+			<one-to-many class="edu.javalearn.domain.hibernateMappingDemo.Answer" />
+		</bag>
+
+	</class>
+
+	<class name="edu.javalearn.domain.hibernateMappingDemo.Answer"
+		table="Answer_Table">
+		<id name="id">
+			<generator class="increment"></generator>
+		</id>
+		<property name="answerName"></property>
+		<property name="postedBy"></property>
+	</class>
+
+</hibernate-mapping>  
