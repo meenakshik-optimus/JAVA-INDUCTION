@@ -1,0 +1,11 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice.domain.javalearn.edu/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:getHelloWorldString>
+         <!--Optional:-->
+         <arg0>
+name
+</arg0>
+      </web:getHelloWorldString>
+   </soapenv:Body>
+</soapenv:Envelope>
