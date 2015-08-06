@@ -18,7 +18,7 @@ public class WriteToCsv {
 	
 	    //CSV file header
 	
-	    private static final String FILE_HEADER = "id,firstName,lastName,gender,age";
+	    private static final String FILE_HEADER = "id,firstName,lastName,address,phoneNumber,emailAddress";
 	
 	 
 	
@@ -71,6 +71,10 @@ public class WriteToCsv {
 	
 	                fileWriter.append(employee.getAddress());
 	
+	                fileWriter.append(COMMA_DELIMITER);
+	                
+	                fileWriter.append(employee.getPhoneNumber());
+	            	
 	                fileWriter.append(COMMA_DELIMITER);
 	
 	                fileWriter.append(String.valueOf(employee.getEmailAddress()));
