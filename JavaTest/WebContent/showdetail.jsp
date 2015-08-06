@@ -10,23 +10,28 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<br>
 	<%!List<Employee> list; %>
-	<%list=(List<Employee>)request.getAttribute("list");%>
+	<%
+		int index = 0;
+	%>
+	<%list=(List<Employee>)request.getAttribute("employees");%>
 	<%! Iterator<Employee> iterator;%>
 	<%iterator=list.iterator(); %>
 	<% while(iterator.hasNext()){  %>
 	<%!String firstName,lastName,address,emailAddress; %>
 	<%!String phoneNumber; %>
 	<%Employee employee=iterator.next(); %>
-	<%firstName=employee.getFirstName();%>"<%=firstName%>
-	<%lastName=employee.getLastName();%>"<%=lastName%>
-	<%address=employee.getAddress();%>"<%=address%>
-	<%phoneNumber=employee.getPhoneNumber();%>"<%=phoneNumber%>
-	<%emailAddress=employee.getEmailAddress();%>"<%=emailAddress%>
+	Employee
+	<%=index + 1%>: FirstName:
+	<%firstName=employee.getFirstName();%>"<%=firstName%><br> LastName:
+	<%lastName=employee.getLastName();%>"<%=lastName%><br> Address:
+	<%address=employee.getAddress();%>"<%=address%><br> PhoneNumber:
+	<%phoneNumber=employee.getPhoneNumber();%>"<%=phoneNumber%><br>
+	Email Address:
+	<%emailAddress=employee.getEmailAddress();%>"<%=emailAddress%><br>
 	<br>
+	<%index++; %>
 	<%} %>
-
-
-	<a href="guestaccessibledetail.jsp">Home</a>
 </body>
 </html>

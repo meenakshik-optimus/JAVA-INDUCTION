@@ -18,15 +18,15 @@
 	<%!String firstName,lastName,address,emailAddress; %>
 	<%!String phoneNumber; %>
 	<%Employee employee=iterator.next(); %>
-	<%firstName=employee.getFirstName();%>"<%=firstName%>
-	<%lastName=employee.getLastName();%>"<%=lastName%>
-	<%address=employee.getAddress();%>"<%=address%>
-	<%phoneNumber=employee.getPhoneNumber();%>"<%=phoneNumber%>
-	<%emailAddress=employee.getEmailAddress();%>"<%=emailAddress%>
+	<%firstName=employee.getFirstName();%>"<%=firstName%><br>
+	<%lastName=employee.getLastName();%>"<%=lastName%><br>
+	<%address=employee.getAddress();%>"<%=address%><br>
+	<%phoneNumber=employee.getPhoneNumber();%>"<%=phoneNumber%><br>
+	<%emailAddress=employee.getEmailAddress();%>"<%=emailAddress%><br>
 	<br>
 	<%} %>
 
 
-	<a href="guestaccessibledetail.jsp">Home</a>
+	<a href="adminaccessibledetail.jsp">Home</a>
 </body>
 </html>

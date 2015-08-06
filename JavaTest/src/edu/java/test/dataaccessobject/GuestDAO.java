@@ -1,6 +1,7 @@
 package edu.java.test.dataaccessobject;
 
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -15,10 +16,10 @@ public class GuestDAO {
 	private SessionFactory sessionFactory;
 	private Session session;
 	private Guest guest;
-	//static Logger log = Logger.getLogger(EmployeeDAO.class);
-	
+	static Logger log = Logger.getLogger(EmployeeDAO.class);
+
 	public GuestDAO() {
-		
+
 		configuration = new Configuration();
 
 		configuration.configure("hibernate.cfg.xml");
@@ -27,12 +28,17 @@ public class GuestDAO {
 		 * create sessionfactory
 		 */
 		sessionFactory = configuration.buildSessionFactory();
-
+		PropertyConfigurator.configure(this.getClass().getClassLoader()
+				.getResource("log4j.properties"));
 	}
-	
-	public void addGuestDetails(String guestName,String password) {
-		try {
 
+	/**
+	 * @param guestName
+	 * @param password
+	 */
+	public void addGuestDetails(String guestName, String password) {
+		try {
+			log.info("Entering in method for adding guest...");
 			/**
 			 * Get Session object
 			 */

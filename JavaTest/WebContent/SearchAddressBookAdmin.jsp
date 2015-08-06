@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form method="POST" action="searchEmployee">
+	<form method="POST" action="searchEmployeeAdmin">
 		input:<input type="text" name="input" /> <br> <input
 			type="submit" value="submit" />
 

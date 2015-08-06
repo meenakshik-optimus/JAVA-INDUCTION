@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+
 import edu.java.test.dataaccessobject.EmployeeDAO;
 
 /**
@@ -19,58 +22,48 @@ import edu.java.test.dataaccessobject.EmployeeDAO;
 @WebServlet("/DeleteFromAddressBook")
 public class DeleteFromAddressBook extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public DeleteFromAddressBook() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	static Logger log = Logger.getLogger(AddressBookDetails.class);
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		PropertyConfigurator.configure(this.getClass().getClassLoader()
+				.getResource("log4j.properties"));
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-String firstName = request.getParameter("firstName");
+		String firstName = request.getParameter("firstName");
 
-int id = Integer.parseInt(request.getParameter("id"));
-System.out.println(id);
-EmployeeDAO employeeDAO=new EmployeeDAO();
-int status=employeeDAO.deleteEmployee(firstName,id);
-try{
-if (status == 1) {
-	PrintWriter out = response.getWriter();
-	out.println("Employee deleted");
+		int id = Integer.parseInt(request.getParameter("id"));
 
-	
+		EmployeeDAO employeeDAO = new EmployeeDAO();
+		log.info("Deleting employee...");
+		int status = employeeDAO.deleteEmployee(firstName, id);
+		try {
+			if (status == 1) {
+				PrintWriter out = response.getWriter();
+				out.println("Employee deleted");
 
-	RequestDispatcher requestDispatcher = request
-			.getRequestDispatcher("/adminaccessibledetail.jsp");
-	requestDispatcher.include(request, response);
-} else {
-	PrintWriter out = response.getWriter();
-	out.println("Try again");
-	RequestDispatcher requestDispatcher = request
-			.getRequestDispatcher("/deleteAddressBook.jsp");
-	requestDispatcher.include(request, response);
-	
-}
-} catch (MalformedURLException exception) {
+				RequestDispatcher requestDispatcher = request
+						.getRequestDispatcher("/adminaccessibledetail.jsp");
+				requestDispatcher.include(request, response);
+			} else {
+				PrintWriter out = response.getWriter();
+				out.println("Try again");
+				RequestDispatcher requestDispatcher = request
+						.getRequestDispatcher("/deleteAddressBook.jsp");
+				requestDispatcher.include(request, response);
 
-exception.printStackTrace();
+			}
+		} catch (MalformedURLException exception) {
 
-} catch (IOException exception) {
+			exception.printStackTrace();
 
-exception.printStackTrace();
-}
+		} catch (IOException exception) {
+
+			exception.printStackTrace();
+		}
 	}
 
 }

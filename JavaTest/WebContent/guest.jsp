@@ -8,11 +8,9 @@
 </head>
 <body>
 	<form method="POST" action="guestLogin">
-		Name:<input type="text" name="guestName" />
-		<br> 
-		Password:<input type="password" name="password" />
-		<br> 
-		<input type="submit" value="login" />
+		Name:<input type="text" name="guestName" /> <br> Password:<input
+			type="password" name="password" /> <br> <input type="submit"
+			value="login" />
 
 	</form>
 </body>
