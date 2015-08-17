@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="JPADEMO">
+	<class>edu.learn.jpa.bean.Employee</class>
+	<class>edu.learn.jpa.bean.NonTeaching</class>
+	<class>edu.learn.jpa.bean.Teaching</class>
+	<class>edu.learn.jpa.bean.Staffss</class>
+	<class>edu.learn.jpa.bean.Staffs</class>
+	<class>edu.learn.jpa.bean.Department</class>
+	<class>edu.learn.jpa.bean.CriteriaEmployee</class>
+	 <properties>
+         <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;DatabaseName=JPA;instanceName=SQLEXPRESS"/>
+         <property name="javax.persistence.jdbc.user" value="sa"/>
+         <property name="javax.persistence.jdbc.password" value="optimus@123"/>
+         <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+         <property name="eclipselink.logging.level" value="FINE"/>
+         <property name="eclipselink.ddl-generation" value="create-tables"/>
+      </properties>
+	</persistence-unit>
+</persistence>
